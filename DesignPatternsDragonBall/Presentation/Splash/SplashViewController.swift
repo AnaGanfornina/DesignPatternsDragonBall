@@ -51,9 +51,13 @@ final class SplashViewController: UIViewController {
             case .loading:
                 print("Cargando") //TODO: Quitar estos prints
                 self?.setAnimation(true)
-            case .ready, .error:
+            case .error:
                 print("Terminado")
                 self?.setAnimation(false)
+            case .ready:
+                self?.setAnimation(false)
+                //Navegamos al login
+                self?.present(LoginBuilder().build(), animated: true)
             }
         }
     }
