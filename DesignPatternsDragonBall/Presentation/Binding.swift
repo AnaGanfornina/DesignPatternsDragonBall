@@ -22,7 +22,7 @@ final class Binding<T: Equatable> {
         self.completion = completion // Registramos la closure para luego ejecutarla dentro del update
     }
     
-    //Función que traduce el hilo en el que está y lo pasa al hilo principal
+    ///Función que traduce el hilo en el que está y lo pasa al hilo principal
     func update(_ state: T) {
         if Thread.current.isMainThread{
             completion?(state)
