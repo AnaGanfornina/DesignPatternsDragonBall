@@ -20,12 +20,12 @@ private extension HeroModel {
 
 // MARK: -  Mocks
 private final class SucceessDetailHeroUseCase: DetailHeroUseCaseProtocol {
-    
-    
-    func run(completion: @escaping (Result<[HeroModel], any Error>) -> Void) {
+    func run(heroName: String, completion: @escaping (Result<[DesignPatternsDragonBall.HeroModel], any Error>) -> Void) {
         completion(.success([.dummyObject]))
     }
     
+    
+
     
 }
 

@@ -36,7 +36,7 @@ final class HeroesListViewModelTest: XCTestCase {
         let useCase = SuccessGetHeroesUseCase()
         let sut = HeroesListViewModel(useCase: useCase)// Este useCase siempre va a retornar un dummyObjet
         
-        let successExpectation = expectation(description: "Sccess scenario")
+        let successExpectation = expectation(description: "Success scenario")
         
         // When
         
@@ -51,4 +51,6 @@ final class HeroesListViewModelTest: XCTestCase {
         wait(for: [successExpectation],timeout: 3)
         XCTAssertEqual(sut.heroes, [.dummyObject])
     }
+    
+    
 }
