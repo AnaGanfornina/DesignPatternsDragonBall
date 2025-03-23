@@ -15,4 +15,5 @@ Podrá usar el que a continuación se le proporciona:
 - **User** : a@gmail.com
 - **Password** : abcdef
 
-  <img width="630" alt="Captura de pantalla 2025-03-23 a las 22 23 49" src="https://github.com/user-attachments/assets/acc05063-0bc7-44e3-931d-964b41ea86c0" />
+
+<img width="580" alt="Captura de pantalla 2025-03-23 a las 22 24 52" src="https://github.com/user-attachments/assets/c5d8170e-794a-4e96-b43f-2840bcf051e5" />
