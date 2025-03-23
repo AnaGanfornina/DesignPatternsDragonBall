@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeroCell" rowHeight="90" id="SpD-Za-8hy" customClass="HeroCell" customModule="DesignPatternsDragonBall" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="495" height="115"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SpD-Za-8hy" id="cau-T9-KFv">
+                <rect key="frame" x="0.0" y="0.0" width="495" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="M0J-2T-uiy">
+                        <rect key="frame" x="16" y="8" width="463" height="99"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MeU-XS-ajB" customClass="AsyncImage" customModule="DesignPatternsDragonBall" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MeU-XS-ajB" secondAttribute="height" id="Rih-Vt-L0R"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14p-e9-1Ca">
+                                <rect key="frame" x="111" y="39.333333333333336" width="352" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="M0J-2T-uiy" firstAttribute="top" secondItem="cau-T9-KFv" secondAttribute="top" constant="8" id="0Ks-Fk-gxF"/>
+                    <constraint firstItem="M0J-2T-uiy" firstAttribute="leading" secondItem="cau-T9-KFv" secondAttribute="leading" constant="16" id="Enh-9f-OF1"/>
+                    <constraint firstItem="M0J-2T-uiy" firstAttribute="centerY" secondItem="cau-T9-KFv" secondAttribute="centerY" id="c1j-1j-nQC"/>
+                    <constraint firstItem="M0J-2T-uiy" firstAttribute="centerX" secondItem="cau-T9-KFv" secondAttribute="centerX" id="kYv-xM-DoS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarView" destination="MeU-XS-ajB" id="5Kv-HX-5d3"/>
+                <outlet property="nameLabel" destination="14p-e9-1Ca" id="msC-12-QgK"/>
+            </connections>
+            <point key="canvasLocation" x="171.75572519083968" y="29.929577464788736"/>
+        </tableViewCell>
+    </objects>
+</document>

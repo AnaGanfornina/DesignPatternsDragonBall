@@ -62,6 +62,8 @@ class LoginViewController: UIViewController {
         activityIndicator.stopAnimating()
         loginButton.isHidden = false
         errorLabel.isHidden = true
+        //Navegamos hacia el HeroList
+        present(HeroesListBuilder().build(), animated: true)
     }
     
     private func renderLoading(){

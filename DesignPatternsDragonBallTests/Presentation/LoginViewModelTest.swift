@@ -48,12 +48,11 @@ final class LoginViewModelTest: XCTestCase {
             
         }
         
+        // Then
+        
         sut.login(username: "", password: "")
         // Para que no se queden los test esperando una respuesta que nunca llega
         wait(for: [loadingExpectation, successExpectation], timeout: 5)
-        
-        // Then
-        
         
     }
     

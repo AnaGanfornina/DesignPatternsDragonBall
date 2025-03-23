@@ -26,6 +26,12 @@ protocol LoginUseCaseProtocol {
 /// Es quien aplica la lógica de negocio, en este caso el login
 final class LoginUseCase: LoginUseCaseProtocol {
     
+    private let dataSource : SessionDataSourceProtocol
+    
+    init(dataSource: SessionDataSourceProtocol) {
+        self.dataSource = dataSource
+    }
+    
     func run(username: String, password: String, completion: @escaping(Result<Void,LoginError>) -> Void){
         
         guard isValidUserName(username) else {
@@ -35,10 +41,17 @@ final class LoginUseCase: LoginUseCaseProtocol {
             return completion(.failure(LoginError(reason: "La contraseña no es válida")))
         }
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
-            completion(.success(()))
-            
-        }
+        // Ejecutamos aqui la llamada aunque en un futuro no se realizará aqui.
+        LoginAPIRequest(username: username, password: password)
+            .perform {[weak self] response in
+                switch response {
+                case .success(let data):
+                    self?.dataSource.storeSession(data)
+                    completion(.success(()))
+                case .failure:
+                    completion(.failure(LoginError(reason: "Ha ocurrido un error en la red")))
+                }
+            }
     }
     
     private func isValidUserName(_ string: String) -> Bool {
