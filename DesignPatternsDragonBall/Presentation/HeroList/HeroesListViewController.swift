@@ -103,7 +103,11 @@ class HeroesListViewController: UIViewController, UITableViewDataSource, UITable
     //son las funciones del delegado
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Navega al detalle // TODO: Navega al detalle
+        // Navega al detalle
+        let heroSelected = viewModel.heroes[indexPath.row]
+        let nameHeroSelected = heroSelected.name
+        //present(DetailHeroBuilder(nameHeroSelected).build(), animated: true)
+        navigationController?.show(DetailHeroBuilder(nameHeroSelected).build(), sender: self)
     }
     
 }

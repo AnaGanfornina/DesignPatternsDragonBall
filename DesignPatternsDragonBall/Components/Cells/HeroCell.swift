@@ -17,9 +17,7 @@ final class HeroCell: UITableViewCell {
     
     @IBOutlet private var nameLabel: UILabel!
     
-    
-    
-    
+
     func setData(name: String, photo: String) {
         nameLabel.text = name
         avatarView.setImage(photo)
