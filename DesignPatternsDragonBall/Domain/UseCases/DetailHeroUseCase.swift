@@ -5,6 +5,11 @@
 //  Created by Ana on 23/3/25.
 //
 
+
+struct HeroError: Error {
+    let reason: String
+}
+
 protocol DetailHeroUseCaseProtocol {
     func run(heroName: String, completion: @escaping (Result<[HeroModel], Error>) -> Void)
 }
