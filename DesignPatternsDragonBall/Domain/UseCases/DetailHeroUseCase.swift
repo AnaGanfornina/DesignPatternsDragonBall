@@ -6,20 +6,17 @@
 //
 
 protocol DetailHeroUseCaseProtocol {
-    func run(completion: @escaping (Result<[HeroModel], Error>) -> Void)
+    func run(heroName: String, completion: @escaping (Result<[HeroModel], Error>) -> Void)
 }
 
 final class DetailHeroUseCase: DetailHeroUseCaseProtocol {
-    
-    
-    let heroName: String
+    private let heroName: String
     
     init(heroName: String){
         self.heroName = heroName
     }
-     
-    
-    func run(completion: @escaping (Result<[HeroModel], any Error>) -> Void) {
+
+    func run(heroName: String, completion: @escaping (Result<[HeroModel], any Error>) -> Void) {
         // Realizar la llamada
         GetHeroesAPIRequest(name: heroName)
             .perform { result in

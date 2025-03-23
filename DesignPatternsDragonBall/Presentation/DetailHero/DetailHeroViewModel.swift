@@ -28,7 +28,7 @@ final class DetailHeroViewModel {
     func loadHero(){
         onStateChanged.update(.loading)
         
-        useCase.run() {[weak self] result in
+        useCase.run(heroName: nameHero) {[weak self] result in
             do {
                 self?.hero = try result.get()
                 self?.onStateChanged.update(.succcess)

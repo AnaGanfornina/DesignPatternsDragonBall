@@ -17,7 +17,7 @@ final class DetailHeroBuilder {
         self.viewModel = DetailHeroViewModel(useCase: useCase, nameHero: name)
     }
     
-    //para los test?
+    //para los test
     func set(viewModel: DetailHeroViewModel) -> Self {
         self.viewModel = viewModel
         return self
